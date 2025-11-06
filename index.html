@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ServiceA Demo</title>
+  </head>
+  <body style="font-family: sans-serif; padding: 2rem;">
+    <h1>ServiceA says:</h1>
+    <div id="result" style="font-size: 1.25rem; font-weight: bold; color:#333;">
+      Loading...
+    </div>
+
+    <script>
+      fetch("http://localhost:8080/hello")
+        .then(res => res.text()) // or res.json() if you return JSON
+        .then(data => {
+          document.getElementById("result").textContent = data;
+        })
+        .catch(err => {
+          document.getElementById("result").textContent =
+            "Error: " + err;
+        });
+    </script>
+  </body>
+</html>
