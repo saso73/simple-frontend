@@ -11,7 +11,7 @@
     </div>
 
     <script>
-      fetch("http://localhost:8080/hello")
+      fetch("https://servicea-latest.onrender.com/hello")
         .then(res => res.text()) // or res.json() if you return JSON
         .then(data => {
           document.getElementById("result").textContent = data;
